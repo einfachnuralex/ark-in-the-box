@@ -1,11 +1,9 @@
 
 # Run Server
 
-docker run --network host -d ark-inst \
-"/home/ark/.steam/steamcmd/ark/ShooterGame/Binaries/Linux/ShooterGameServer" "TheIsland?AltSaveDirectoryName=TheIsland?listen?Multihome=0.0.0.0?SessionName=TheIsland?MaxPlayers=2?QueryPort=27015?RCONPort=27020?Port=7777?ServerAdminPassword=blabla123 -server -log -NoBattlEye -USEALLAVAILABLECORES -usecache -automanagedmods -clusterid=bla123 -NoTransferFromFiltering"
+docker run -v /opt/cross:/ark -v /opt/ark/TheIsland:/home/ark/.steam/steamcmd/ark/ShooterGame/Saved/ --network host -d ark-inst "/home/ark/.steam/steamcmd/ark/ShooterGame/Binaries/Linux/ShooterGameServer" "TheIsland?AltSaveDirectoryName=TheIsland?listen?Multihome=0.0.0.0?SessionName=TheIsland?MaxPlayers=2?QueryPort=27015?RCONPort=27020?Port=7777?ServerAdminPassword=blabla123 -server -log -NoBattlEye -USEALLAVAILABLECORES -usecache -automanagedmods -clusterid=bla123 -NoTransferFromFiltering -ClusterDirOverride=/ark"
 
-docker run --network host -d ark-inst \
-"/home/ark/.steam/steamcmd/ark/ShooterGame/Binaries/Linux/ShooterGameServer" "ScorchedEarth_P?AltSaveDirectoryName=ScorchedEarth_P?listen?Multihome=0.0.0.0?SessionName=ScorchedEarth_P?MaxPlayers=2?QueryPort=27016?RCONPort=27021?Port=7779?ServerAdminPassword=blabla123 -server -log -NoBattlEye -USEALLAVAILABLECORES -usecache -automanagedmods -clusterid=bla123 -NoTransferFromFiltering"
+docker run -v /opt/cross:/ark -v /opt/ark/ScorchedEarth_P:/home/ark/.steam/steamcmd/ark/ShooterGame/Saved/ --network host -d ark-inst "/home/ark/.steam/steamcmd/ark/ShooterGame/Binaries/Linux/ShooterGameServer" "ScorchedEarth_P?AltSaveDirectoryName=ScorchedEarth_P?listen?Multihome=0.0.0.0?SessionName=ScorchedEarth_P?MaxPlayers=2?QueryPort=27016?RCONPort=27021?Port=7779?ServerAdminPassword=blabla123 -server -log -NoBattlEye -USEALLAVAILABLECORES -usecache -automanagedmods -clusterid=bla123 -NoTransferFromFiltering -ClusterDirOverride=/ark"
 
 
 # Maps
